@@ -1,0 +1,14 @@
+// views/blogList.jade
+extends layout
+
+block content
+  h1 Blog Posts
+  .row
+    each post in posts
+      .col-xs-12.col-md-4
+        .panel.panel-default
+          .panel-heading
+            h2.panel-title= post.title
+          .panel-body
+            p= post.excerpt // Assuming you have an excerpt property
+            a.btn.btn-primary(href=`/blog/${post._id}`) Read More
